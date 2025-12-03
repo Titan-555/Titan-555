@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Ensure the script stops if any command fails
+set -e
+
+echo "Initializing Git repository..."
+
+# 1. Initialize a new git repository in the current directory
+git init
+
+# 2. Add all files in the current directory to the staging area
+# Note: Ensure you have a .gitignore file (standard for Android) before running this
+# to avoid committing build artifacts like /build or .gradle folders.
+git add .
+
+# 3. Create the initial commit with your specified message
+git commit -m "chore: add initial Android ECG app boilerplate"
+
+echo "Success! Repository created and initial commit made."
+git log --oneline -n 1
